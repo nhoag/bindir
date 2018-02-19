@@ -9,6 +9,8 @@
 # * Wrap commands for readability
 # * Use git diff --co-color
 # * Add support for git diff options and arguments
+# 2018-02-18:
+# * Add check for aspell
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,6 +26,8 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 set -e
+
+command -v aspell >/dev/null 2>&1 || { echo >&2 "Install aspell or ensure it's in your PATH and rerun. Aborting."; exit 1; }
 
 # The following is a text file that represents your custom dictionary; edit as
 # necessary. Add words to it that you wish to ignore for the spell check.
